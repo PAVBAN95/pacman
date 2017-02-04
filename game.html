@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style> body {padding: 0; margin: 0;} </style>
+</head>
+
+<body bgcolor="black" align="CENTER">
+<CENTER>
+
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <script language="javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" src="libraries/p5.sound.js"></script>
+  <script language="javascript" type="text/javascript" src="pac.js"></script>
+
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+ 
+  
+  </CENTER>
+
+  <h1 id="score">SCORE</h1>
+  <img src="images/lifemario.png" id="img1" style="position:absolute;left:50px;top:80px" >
+  <img src="images/lifemario.png" id="img2" style="position:absolute;left:90px;top:80px" >
+  <img src="images/lifemario.png" id="img3" style="position:absolute;left:130px;top:80px" >
+
+  <script type="text/javascript">
+    if(c===3)
+    document.getElementById('img1').style.display='none';
+   // image.parentNode.removeChild(image);
+    </script>
+</body>
+</html>
