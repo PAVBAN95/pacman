@@ -144,10 +144,11 @@ function draw() {
 
 		for(var i=0;i<5;i++){
 			devil[i].show();
+			frameRate(2);
 			devil[i].move();
 		}
 
-		
+		frameRate(5);
 		
 		pacman.show();
 		if(count===0)
@@ -346,6 +347,50 @@ function Ghosts(img,x,y)
 			else if(!chase.walls[0])
 				this.j-=1;
 			
+		}
+		else if(dx==0)
+		{
+			if(dy>0)
+			{
+				if(!chase.walls[2])
+					this.j+=1;
+				else if(!chase.walls[1])
+					this.i+=1;
+				else if(!chase.walls[3])
+					this.i-=1;
+			}
+			else if(dy<0)
+			{
+				if(!chase.walls[0])
+					this.j-=1; 
+				else if(!chase.walls[1])
+					this.i+=1;
+				else if(!chase.walls[3])
+					this.i-=1;
+
+			}
+
+		}
+		else if(dy==0)
+		{
+			if(dx>0)
+			{
+				if(!chase.walls[1])
+					this.i+=1;
+				else if(!chase.walls[2])
+					this.j+=1; 
+				else if(!chase.walls[0])
+					this.j-=1;
+			}
+			else if(dx<0)
+			{
+				if(!chase.walls[3])
+					this.i-=1; 
+				else if(!chase.walls[2])
+					this.j+=1; 
+				else if(!chase.walls[0])
+					this.j-=1;
+			}
 		}
 	}
 	else
