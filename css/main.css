@@ -66,8 +66,7 @@ a{
 	color: #222;
 	margin: 0px 5px;
 	padding: 10px 90px;
-	/*top: 1000px;*/
-	/*bottom: 50px;*/
+	z-index: 42;
 	border: 3px solid #222;
 	left: 900px;
 	-webkit-transition: all 1s;
@@ -91,6 +90,7 @@ a{
 	color: #222;
 	border: 3px solid #222;
     bottom: 50px;
+    z-index: 45;
     -webkit-transition: all 1s;
      -moz-transition: all 1s;
      transition: all 1s;
@@ -105,7 +105,7 @@ a{
 .coolPac{
 	display: inline;
 }
-.play_button:hover, .quit_button:hover{
+#play_button:hover, #quit_button:hover{
 	background-color: #ccc;
 	color: #333;
 	border-color: #ccc;
@@ -135,13 +135,12 @@ a:hover{
  }
 
  #movingPac {
-	 max-width: 550px;
+	 max-width: 450px;
 	 height: 300px;
      position: absolute;
-     left: 280px;
-     /*background-color: #00cc99;*/
+     left: 355px;
      z-index: 42;
-     /*overflow: hidsden;*/
+background-color: #00cc99;
      -webkit-transition: all 2.5s;
      -moz-transition: all 2.5s;
      transition: all 2.5s;
@@ -152,18 +151,18 @@ a:hover{
 }
 
 #movingPac.final {
-	top: 200px;
+	top: 250px;
 }
 
 
 #hangpac{
 	max-width: 100%;
 	height: auto;
-	background-color: #00cc99;
 	position: absolute;
 	top:-430px;
 	left:800px;
-	z-index: 40;
+	z-index: 38;
+	background-color: #00cc99;
 	-webkit-transition: all 3s;
      -moz-transition: all 3s;
      transition: all 3s;
@@ -181,10 +180,18 @@ a:hover{
 	max-width: 100%;
 	height: auto;
 	position: absolute;
-	top:-400px;
 	left:100px;
 	z-index: 40;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    transition: all 3s;
 } 
+#rope.init{
+	top: -300px;
+}
+#rope.final{
+	top: -50px;
+}
  #movingGang{
  	height: 500px;
  	position: absolute;
@@ -201,6 +208,16 @@ a:hover{
 	color: #222;
 	font-family: myFonts2;
 	left: -400px;
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    transition: all 2s;
+}
+
+#csec.init{
+	left: -200px;
+}
+#csec.final{
+	left: 500px;
 }
 #hackathon{
 	height: 400px;
@@ -211,6 +228,16 @@ a:hover{
 	top: 400px;
 	z-index: 37;
 	right: -400px;
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    transition: all 2s;
+}
+
+#hackathon.init{
+	right: -200px;
+}
+#hackathon.final{
+	right: 500px;
 }
 img {
     max-width: 100%;

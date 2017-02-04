@@ -81,12 +81,20 @@ var hack = -600;
 	        move(--i);
 	    }, 40);*/
 	    document.getElementById("movingDiv").className = "final";
+	    document.getElementById("csec").className = "final";
+
+	    document.getElementById("hackathon").className = "final";
+
 	    setTimeout(function(){
 	    	document.getElementById("movingPac").className = "final";
 	    	document.getElementById("hangpac").className = "final";
 	   		document.getElementById("playQuit").className = "final";
 
 	    }, 2000);
+	    setTimeout(function(){
+	    	document.getElementById("rope").className = "final";
+
+	    }, 3000);
 
 
 	    
