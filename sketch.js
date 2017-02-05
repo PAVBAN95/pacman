@@ -261,11 +261,9 @@ function Ghosts(img,x,y)
 			if(xball==this.i && yball==this.j && this.isWeak===false){
 
 				c--;
-				console.log(c);
-	   			textSize(20);
-				textAlign(CENTER);
+				
    			if(c==0){
-				text("Game Over", 100,100,150,100);
+				// text("Game Over", 100,100,150,100);
 				dead.play();
 				mySound.stop();
 				remove();
