@@ -4,7 +4,8 @@ var pacman,pacmanImg,redImg,yellowImg,pinkImg,greenImg,blueImg;
 var grid=[];
 var current,chase;
 var xball=0,yball=0;
-var xenem,yenem,xenem1,xenem2;
+var xenem,yenem;
+var flag=false;
 var devil=[];
 var direction = 0; 
 var stack=[],power=[],dots=[];
@@ -93,6 +94,16 @@ function setup() {
 function draw() {
 
 	background(5);
+	if(flag)
+	{
+		mySound.stop();
+		sleep(3000);
+		mySound.play();
+		
+		flag = false;
+		//frameRate(5);
+
+	}
 			
 
 	for(var i=0;i<grid.length;i++)
@@ -229,6 +240,15 @@ function draw() {
 	 }
 }
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
 function Ghosts(img,x,y)
 {
 
@@ -261,32 +281,37 @@ function Ghosts(img,x,y)
 			if(xball==this.i && yball==this.j && this.isWeak===false){
 
 				c--;
-				// console.log(c);
-	   			textSize(20);
-				textAlign(CENTER);
-   			if(c==0){
-				text("Game Over", 100,100,150,100);
-				dead.play();
-				mySound.stop();
-				remove();
-				noLoop();
-				}
-			else
-			{
-				document.getElementById('img'+c).innerHTML="";
-				
-				heroDead.play();
-
-				for(var i=0;i<devil.length;i++)
+	   			if(c==0){
+					// text("Game Over", 100,100,150,100);
+					dead.play();
+					mySound.stop();
+					//remove();
+					noLoop();
+					}
+				else
 				{
-					devil[i].i=devil[i].lastx;
-					devil[i].j=devil[i].lasty;
 
+					document.getElementById('img'+c).innerHTML="";
+					
+					heroDead.play();
+					mySound.stop();
+					for(var i=0;i<devil.length;i++)
+					{
+						devil[i].i=devil[i].lastx;
+						devil[i].j=devil[i].lasty;
+
+					}
+					
+					// mySound.play();
+
+
+
+					
+
+					
+					flag=true;
+					
 				}
-
-
-				
-			}
 			}
 			else if(xball==this.i && yball==this.j && this.isWeak===true)
 			{
@@ -398,20 +423,82 @@ function Ghosts(img,x,y)
 	}
 	else
 	{
-		var r1=floor(random(0,4));
-		this.direction=r1;
+		// var r1=floor(random(0,4));
+		// this.direction=r1;
 	   
-	   	 if(this.direction==0 && !chase.walls[0]){
-	   	 	this.j-=1;
+	   	 if(this.direction==0){
+
+	   	 	if(!chase.walls[0])
+	   	 		this.j-=1;
+	   	 	else if(!chase.walls[1]){
+	   	 		this.i+=1;
+	   	 		this.direction=1;
+	   	 	}
+	   	 	else if(!chase.walls[3]){
+	   	 		this.i-=1;
+	   	 		this.direction=3;
+	   	 	}
+	   	 	else if(!chase.walls[2]){
+	   	 		this.j+=1;
+	   	 		this.direction=2;
+	   	 	}
+
 	   	}
-	   	 if(this.direction==1 && !chase.walls[1]){
-	   	 	this.i+=1;
+	   	else if(this.direction==1){
+
+	   	 	if(!chase.walls[1])
+	   	 		this.i+=1;
+	   	 	else if(!chase.walls[2]){
+	   	 		this.j+=1;
+	   	 		this.direction=2;
+	   	 	}
+	   	 	else if(!chase.walls[0]){
+	   	 		this.j-=1;
+	   	 		this.direction=0;
+	   	 	}
+	   	 	else if(!chase.walls[3]){
+	   	 		this.i-=1;
+	   	 		this.direction=3;
+	   	 	}
+
 	   	}
-	   	 if(this.direction==2 && !chase.walls[2]){
-	   	 	this.j+=1;
+	   	else if(this.direction==2){
+
+	   	 	if(!chase.walls[2])
+	   	 		this.j+=1;
+	   	 	else if(!chase.walls[1]){
+	   	 		this.i+=1;
+	   	 		this.direction=1;
+	   	 	}
+	   	 	else if(!chase.walls[3]){
+	   	 		this.i-=1;
+	   	 		this.direction=3;
+	   	 	}
+	   	 	else if(!chase.walls[0]){
+	   	 		this.j-=1;
+	   	 		this.direction=0;
+	   	 	}
+
+
 	   	}
-	   	 if(this.direction==3 && !chase.walls[3])
-	   		this.i-=1;
+	   	else if(this.direction==3){
+	   	
+	   	 	if(!chase.walls[3])
+	   			this.i-=1;
+	   		else if(!chase.walls[2]){
+	   	 		this.j+=1;
+	   	 		this.direction=2;
+	   	 	}
+	   	 	else if(!chase.walls[0]){
+	   	 		this.j-=1;
+	   	 		this.direction=0;
+	   	 	}
+	   	 	else if(!chase.walls[1]){
+	   	 		this.i+=1;
+	   	 		this.direction=1;
+	   	 	}
+
+	   	}
 	}
 
 
