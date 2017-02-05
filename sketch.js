@@ -268,6 +268,7 @@ function Ghosts(img,x,y)
 				text("Game Over", 100,100,150,100);
 				dead.play();
 				mySound.stop();
+				remove();
 				noLoop();
 				}
 			else
