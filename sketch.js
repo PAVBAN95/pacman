@@ -261,7 +261,7 @@ function Ghosts(img,x,y)
 			if(xball==this.i && yball==this.j && this.isWeak===false){
 
 				c--;
-				console.log(c);
+				// console.log(c);
 	   			textSize(20);
 				textAlign(CENTER);
    			if(c==0){
@@ -272,6 +272,8 @@ function Ghosts(img,x,y)
 				}
 			else
 			{
+				document.getElementById('img'+c).innerHTML="";
+				
 				heroDead.play();
 
 				for(var i=0;i<devil.length;i++)
