@@ -261,7 +261,6 @@ function Ghosts(img,x,y)
 			if(xball==this.i && yball==this.j && this.isWeak===false){
 
 				c--;
-				
    			if(c==0){
 				// text("Game Over", 100,100,150,100);
 				dead.play();
@@ -271,6 +270,8 @@ function Ghosts(img,x,y)
 				}
 			else
 			{
+				document.getElementById('img'+c).innerHTML="";
+				
 				heroDead.play();
 
 				for(var i=0;i<devil.length;i++)
