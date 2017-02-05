@@ -58,29 +58,10 @@ var hack = -600;
 
 	
 	function move(i) {
-		/*var x = document.getElementById('movingDiv').offsetLeft;
-		var csec = document.getElementById('csec').offsetLeft;
-		if(csec <=1050)
-			csec+=10;
-		hack+=10;
-		x+=10;
-		document.getElementById('movingDiv').style.left = x+'px';
-		document.getElementById('csec').style.left = csec+'px';
-		document.getElementById('hackathon').style.right = hack+'px';
-		console.log("i "+i);
-		if(Math.floor(i)==250){
-			document.getElementById('pacDown').innerHTML = "<img src='images/pacmanDown.png'>";
-		}
-	    if (i < 0){
-	    	document.getElementById('hackathon').style.zIndex = "25";
-	    	movePac();
-	    	return;
-	    }
 
-	    setTimeout(function () {
-	        move(--i);
-	    }, 40);*/
+	    setTimeout(function(){
 	    document.getElementById("movingDiv").className = "final";
+	},500);
 	    document.getElementById("csec").className = "final";
 
 	    document.getElementById("hackathon").className = "final";

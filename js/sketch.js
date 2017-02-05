@@ -98,7 +98,7 @@ function draw() {
 	background(5);
 	if(flag)
 	{
-		mySound.pause();
+		mySound.stop();
 		sleep(3000);
 		//mySound.play();
 		
@@ -553,7 +553,7 @@ function makePower(x,y)
 		{	
 			if(!getPower.isPlaying() && this.draw){
 			getPower.play();
-			mySound.pause();
+			mySound.stop();
 			}
 			
 			if(this.draw)

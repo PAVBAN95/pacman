@@ -1,0 +1,12 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>score</servlet-name>
+		<servlet-class>ScoreServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>score</servlet-name>
+		<url-pattern>/score</url-pattern>
+	</servlet-mapping>
+</web-app>
