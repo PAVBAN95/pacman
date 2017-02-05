@@ -96,14 +96,19 @@ function draw() {
 	background(5);
 	if(flag)
 	{
-		mySound.stop();
+
+		mySound.pause();
 		sleep(3000);
-		mySound.play();
+// 		mySound.play();
 		
 		flag = false;
-		//frameRate(5);
+  }//frameRate(
+    if(!mySound.isPlaying()){
+      mySound.play();
+    }
+		
 
-	}
+	
 			
 
 	for(var i=0;i<grid.length;i++)
@@ -285,7 +290,7 @@ function Ghosts(img,x,y)
 					// text("Game Over", 100,100,150,100);
 					dead.play();
 					mySound.stop();
-					//remove();
+
 					noLoop();
 					}
 				else
@@ -294,6 +299,7 @@ function Ghosts(img,x,y)
 					document.getElementById('img'+c).innerHTML="";
 					
 					heroDead.play();
+
 					mySound.stop();
 					for(var i=0;i<devil.length;i++)
 					{
@@ -304,11 +310,6 @@ function Ghosts(img,x,y)
 					
 					// mySound.play();
 
-
-
-					
-
-					
 					flag=true;
 					
 				}
