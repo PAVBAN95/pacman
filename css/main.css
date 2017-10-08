@@ -62,8 +62,8 @@ a{
 	z-index: 100;
 	background-color: #000;
 	-webkit-transition: all 1s;
-     -moz-transition: all 1s;
-     transition: all 1s;
+        -moz-transition: all 1s;
+        transition: all 1s;
 }
 
 #gamePop.init{
@@ -119,8 +119,8 @@ button{
 	top: 1000px;
 	left: 700px;
 	-webkit-transition: all 3s;
-     -moz-transition: all 3s;
-     transition: all 3s;
+        -moz-transition: all 3s;
+        transition: all 3s;
 }
 
 #playQuit.init{
@@ -141,8 +141,8 @@ button{
 	border: 3px solid #222;
 	left: 900px;
 	-webkit-transition: all 1s;
-     -moz-transition: all 1s;
-     transition: all 1s;
+        -moz-transition: all 1s;
+	transition: all 1s;
 }
 
 #play:hover{
@@ -158,20 +158,20 @@ button{
 	top: 500px;
 }
 #quit{
-	display: inline;
+    display: inline;
     font-size: 30px;
     padding: 10px 40px;
     margin: 0px 5px;
     /*top: 1000px;*/
     max-width: 200px;
-	height: auto;
-	color: #222;
-	border: 3px solid #222;
+    height: auto;
+    color: #222;
+    border: 3px solid #222;
     bottom: 50px;
     z-index: 45;
     -webkit-transition: all 1s;
-     -moz-transition: all 1s;
-     transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
 }
 #quit:hover{
 	background-color: #fff;
@@ -198,7 +198,7 @@ a:hover{
 }
 
 #movingDiv {
-	 height: 400px;
+     height: 400px;
      position: absolute;
      top:150px;
      left: 0px;
@@ -266,8 +266,8 @@ background-color: #00cc99;
 	left:100px;
 	z-index: 40;
 	-webkit-transition: all 3s;
-    -moz-transition: all 3s;
-    transition: all 3s;
+       -moz-transition: all 3s;
+       transition: all 3s;
 } 
 #rope.init{
 	top: -300px;
@@ -292,8 +292,8 @@ background-color: #00cc99;
 	font-family: myFonts2;
 	left: -400px;
 	-webkit-transition: all 2s;
-    -moz-transition: all 2s;
-    transition: all 2s;
+        -moz-transition: all 2s;
+        transition: all 2s;
 }
 
 #csec.init{
